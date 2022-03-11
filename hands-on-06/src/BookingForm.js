@@ -79,7 +79,7 @@ class BookingForm extends React.Component {
             let rb = <React.Fragment key={eachSeating.value}>
                 <input type="radio"
                     name="seating"
-                    value={eachSeating.value}
+                    value={eachSeating.value}  
                     onChange={this.updateFormField}
                     checked={this.state.seating === eachSeating.value}
 
