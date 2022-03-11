@@ -1,0 +1,21 @@
+[
+    {
+        "display":"Raw Fishes",
+        "value":"rawfishes"
+    },
+
+    {
+        "display":"Salad",
+        "value": "salad"
+    },
+
+    {
+        "display":"Fried Cuttlefish",
+        "value":"friedcuttlefish"
+    },
+
+    {
+        "display":"Peanuts",
+        "value":"peanuts"
+    }
+]
