@@ -1,0 +1,18 @@
+[
+    {
+        "display":"赤",
+        "value":"red"
+    },
+    {
+        "display":"Green",
+        "value": "green"
+    },
+    {
+        "display":"Blue",
+        "value":"blue"
+    },
+    {
+        "display": "Yellow",
+        "value": "yellow"
+    }
+]
