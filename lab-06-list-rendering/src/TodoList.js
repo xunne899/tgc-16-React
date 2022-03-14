@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Create a class-based component with the name `TodoList`
-export default class TodoList extends React.Component {
+export default class ToDoList extends React.Component {
     state = {
         tasks: [
             "Wash the car",
