@@ -1,12 +1,11 @@
-import TodoList from './TodoList.js';
-
+import TodoList from "./TodoList";
 
 function App() {
   return (
     <div>
-       <TodoList/>
+      <TodoList/>
     </div>
   );
 }
 
-export default TodoList;
+export default App;
