@@ -1,4 +1,5 @@
-import React from "react"
+import React from 'react'
+
 class SurveyForm extends React.Component {
     // begin state
     state = {
@@ -11,19 +12,19 @@ class SurveyForm extends React.Component {
 
     colours = [
         {
-            'display':'赤',
+            'display':'红',
             'value':'red'
         },
         {
-            'display':'Green',
+            'display':'青',
             'value': 'green'
         },
         {
-            'display':'Blue',
+            'display':'蓝',
             'value':'blue'
         },
         {
-            'display': 'Yellow',
+            'display': '黄',
             'value': 'yellow'
         }
     ]
@@ -43,7 +44,6 @@ class SurveyForm extends React.Component {
         }
     ]
 
-
     fruits = [
         {
             'display':'Apple',
@@ -58,6 +58,7 @@ class SurveyForm extends React.Component {
             'value':'orange'
         }
     ]
+
     renderCountries() {
 
         /*
@@ -81,7 +82,7 @@ class SurveyForm extends React.Component {
            // create the radio button JSX 
            let rb = <React.Fragment key={eachColour.value}>
                         <input type="radio" 
-                        name="colours" 
+                        name="colour" 
                         checked={this.state.colour === eachColour.value} 
                         value={eachColour.value}
                         onChange={this.updateFormField}
@@ -106,7 +107,7 @@ class SurveyForm extends React.Component {
             </div>
             <div>
                 <label>Colours:</label>
-                { this.renderColours()}
+                {this.renderColours()}
             </div>
             <div>
                 <label>Country:</label>
@@ -121,12 +122,14 @@ class SurveyForm extends React.Component {
                         <input type="checkbox"
                                 name="fruits"
                                 value={eachFruit.value}
+                                onChange={this.updateFruits}
                                 checked={this.state.fruits.includes(eachFruit.value)}
                         />
                         <span>{eachFruit.display}</span>
                     </React.Fragment>
                 })}
             </div>
+
 
 
         </React.Fragment>)
@@ -139,25 +142,23 @@ class SurveyForm extends React.Component {
             [e.target.name] : e.target.value
         })
     }
-   
-
     // end updateformfield
-    updateFruits = (e) => {
 
-      
-        if (this.state.fruits.includes(e.target.value)) {
+    updateFruits = (e) => {
+             if (this.state.fruits.includes(e.target.value)) {
+ 
               // case 1: the value is already in the array
               let indexToRemove = this.state.fruits.findIndex((eachFruit)=>{
-                  return eachFruit.value === e.target.value
+                  return eachFruit === e.target.value
               })
-              console.log("indexToRemove")
-              let cloned =[
-                  ...this.state.fruits.slice(0,indexToRemove),
-                  ...this.state.fruits.slice(indexToRemove+1)
-              ] ;
-                this.setState({
-                'fruits':cloned
-            })
+         
+              let cloned = [ 
+                  ...this.state.fruits.slice(0, indexToRemove), // slice up but excluding the index that we want to remove
+                  ...this.state.fruits.slice(indexToRemove+1) // slice starting one after the index to remove
+                ];
+              this.setState({
+                  'fruits':cloned
+              })
         } else {
              // case 2: the value is not in the array
              let cloned = [...this.state.fruits, e.target.value];
@@ -169,13 +170,9 @@ class SurveyForm extends React.Component {
  
 
     }
-
-
 }
 
 export default SurveyForm;
-
-
 
 
 // import React from 'react'
