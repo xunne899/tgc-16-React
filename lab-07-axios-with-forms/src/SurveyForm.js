@@ -80,7 +80,7 @@ class SurveyForm extends React.Component {
             // create the radio button JSX 
             let rb = <React.Fragment key={eachColour.value}>
                 <input type="radio"
-                    name="colours"
+                    name="colour"
                     checked={this.state.colour === eachColour.value}
                     value={eachColour.value}
                     onChange={this.updateFormField}
